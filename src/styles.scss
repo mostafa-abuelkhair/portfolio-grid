@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+  --foundation1:#0F0F0F;
+  --foundation2:#323232;
+  --foundation3:#4E4FEB;
+  --foundation4:#FFFFFF;
+  --foundation5:#afafaf;
+}
+
+html{
+  background-color: var(--foundation1);
+  color: var(--foundation4);
+  font-family: sans-serif;
+}

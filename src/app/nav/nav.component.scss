@@ -1,0 +1,31 @@
+nav{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  ul{
+    display: flex;
+    gap: 40px;
+    list-style: none;
+
+    li{
+      cursor: pointer;
+      a{
+        color: var(--foundation5);
+        text-decoration: none;
+      }
+      a.active{color: var(--foundation4);}
+    }
+
+  }
+
+  button{
+    background-color: var(--foundation2);
+    border: none;
+    color:var(--foundation4);
+    padding: 15px 30px;
+    border-radius: 20px;
+  }
+
+}

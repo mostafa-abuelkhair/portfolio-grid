@@ -1,0 +1,68 @@
+
+$foundation1:#151515;
+$foundation2:#202020;
+
+.grid{
+  padding: 80px 20%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  'title title title aim aim'
+  'title title title social social'
+  'skills skills skills skills skills';
+  gap:20px;
+
+  article{
+    padding: 15px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, $foundation2 0%, $foundation1 100%);
+    outline: solid 0.5px rgba(255, 255, 255, 0.137);
+    display: flex;
+    align-items: center;
+  }
+
+  .title{
+    display: flex;
+    gap: 15px;
+    grid-area: title;
+
+    img{
+      width: 200px;
+      height: 200px;
+      object-fit:cover;
+      object-position: 0% 0%;
+      border-radius: 20px 00px 20px 0px;
+    }
+    div{
+      h1,h3{
+        font-size: 14px;
+        color: var(--foundation5);
+      }
+      h2{font-size: 22px;}
+    }
+
+  }
+
+  .aim{
+    grid-area: aim;
+    font-size: 8px;
+    text-align: center;
+  }
+  .skills{
+    grid-area: skills;
+    line-height: 25px;
+  }
+  .social{
+    grid-area: social;
+    display: flex;
+    justify-content: space-around;
+    i{
+      font-size: 35px;
+      cursor: pointer;
+      padding: 14px 20px;
+      border-radius: 50%;
+    }
+    padding: 30px;
+  }
+}
