@@ -3,29 +3,112 @@ nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 0px 50px;
+  gap: 10px;
 
-  ul{
+  .start{
     display: flex;
-    gap: 40px;
-    list-style: none;
-
-    li{
-      cursor: pointer;
-      a{
-        color: var(--foundation5);
-        text-decoration: none;
+    justify-content: space-around;
+    width: 65%;
+    .logo{
+      font-family: 'Whisper', cursive;
+      font-size: 35px;
+      color: var(--foundation4);
+    }
+    ul{
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      li{
+        cursor: pointer;
+        a{
+          color: var(--foundation5);
+          text-decoration: none;
+          &.active{color: var(--foundation4);}
+          &:hover{color: var(--foundation4);}
+        }
       }
-      a.active{color: var(--foundation4);}
+    }
+  }
+
+  .end{
+    display: flex;
+    align-self: flex-start;
+    gap: 10px;
+    button.talk{
+      background-color: var(--foundation2);
+      cursor: pointer;
+      border: none;
+      color:var(--foundation4);
+      padding: 15px 30px;
+      border-radius: 20px;
+      &:hover{
+        background-color: var(--foundation3);
+      }
+      i{
+       display: none;
+      }
+    }
+    button.toggle{
+      cursor: pointer;
+      display: none;
+      font-size: 25px;
+      border: none;
+      padding: 10px;
+      background-color: transparent;
+      color: white;
+    }
     }
 
   }
 
-  button{
-    background-color: var(--foundation2);
-    border: none;
-    color:var(--foundation4);
-    padding: 15px 30px;
-    border-radius: 20px;
+
+
+
+@media only screen and (max-width: 992px) {
+
+  nav{
+    justify-content: space-between;
+
+    .end{
+      button.toggle{
+        display: block;
+      }
+      button.talk{
+        background: transparent;
+        padding: 0px 0px;
+        border: none;
+        &:hover{
+          background-color: transparent;
+        }
+        span{
+          display: none;
+        }
+        i{
+          display: block;
+          font-size: 25px;
+          color: #25D366;
+          &:hover{
+            color: var(--foundation3);
+          }
+        }
+
+      }
+    }
+
+    .start{
+      flex-direction: column;
+      width: fit-content;
+      ul{
+      flex-direction: column;
+      &.display-none{
+        display: none;
+      }
+    }
+    }
+
   }
 
 }
+
+

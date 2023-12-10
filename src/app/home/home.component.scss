@@ -3,14 +3,15 @@ $foundation1:#151515;
 $foundation2:#202020;
 
 .grid{
-  padding: 80px 20%;
+  padding: 80px 18%;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:
   'title title title aim aim'
   'title title title social social'
-  'skills skills skills skills skills';
+  'education education skills skills skills'
+  'experience let let let cources';
   gap:20px;
 
   article{
@@ -26,12 +27,13 @@ $foundation2:#202020;
     display: flex;
     gap: 15px;
     grid-area: title;
+    justify-content: space-around;
 
     img{
-      width: 200px;
-      height: 200px;
+      width: 40%;
+      max-width: 300px;
       object-fit:cover;
-      object-position: 0% 0%;
+      object-position: 30% 0%;
       border-radius: 20px 00px 20px 0px;
     }
     div{
@@ -42,16 +44,35 @@ $foundation2:#202020;
       h2{font-size: 22px;}
     }
 
+    i{
+      align-self: flex-end;
+      font-size: 25px;
+      cursor: pointer;
+      &:hover{
+        color: var(--foundation3);
+      }
+    }
+
   }
 
   .aim{
     grid-area: aim;
     font-size: 8px;
     text-align: center;
+    justify-content: center;
   }
   .skills{
     grid-area: skills;
     line-height: 25px;
+    flex-direction: column;
+    h2{
+      font-size: 20px;
+      align-self: flex-start;
+      margin-bottom: 0px;
+    }
+    p{
+      color: var(--foundation5);
+    }
   }
   .social{
     grid-area: social;
@@ -62,7 +83,102 @@ $foundation2:#202020;
       cursor: pointer;
       padding: 14px 20px;
       border-radius: 50%;
+      &:hover{
+        color: var(--foundation3);
+      }
     }
+
     padding: 30px;
   }
+
+  .education,.work{
+    grid-area: education;
+    flex-direction: column;
+
+    h2{
+      font-size: 20px;
+      align-self: flex-start;
+      margin-bottom: 0px;
+    }
+    p{
+      color: var(--foundation5);
+    }
+  }
+  .work{grid-area: work;display: none;}
+
+  .experience{
+    grid-area: experience;
+  }
+  .cources{
+    grid-area: cources;
+  }
+  .experience,.cources{
+    flex-direction: column;
+    h2{
+      font-size: 35px;
+      margin-bottom: 0px;
+    }
+    p{
+      text-align: center;
+      color:var(--foundation5)
+    }
+  }
+
+  .let{
+    padding-left: 35px;
+    grid-area: let;
+    font-size: 35px;
+    letter-spacing: 8px;
+    justify-content: space-around;
+    span{
+      color: var(--foundation3);
+    }
+    i{
+      cursor: pointer;
+      &:hover{
+        color: var(--foundation3);
+      }
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .grid{
+    padding: 80px 5%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    'title title'
+    'aim aim'
+    'social social'
+    'education education'
+    'skills skills'
+    'experience cources'
+    'let let';
+    gap:20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .grid{
+
+    .title{
+      flex-direction: column;
+      img{
+        width: 250px;
+      }
+      div{
+        text-align: center;
+      }
+    }
+
+    .let{
+      flex-direction: column;
+      i{
+        align-self: flex-end;
+      }
+    }
+  }
+
 }
