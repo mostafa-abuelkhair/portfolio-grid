@@ -4,6 +4,7 @@ import { FooterComponent } from '../footer/footer.component';
 import {RouterModule} from '@angular/router';
 
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -12,5 +13,6 @@ import {RouterModule} from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+
 
 }

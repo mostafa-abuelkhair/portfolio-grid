@@ -1,7 +1,7 @@
-<nav>
+<nav data-aos="fade">
 
   <div class="start">
-    <a class="logo">Abdelkhalek</a>
+    <a routerLink="/home" class="logo">Abdelkhalek</a>
 
     <ul class="{{toggleNav? '':'display-none'}}">
       <li>
@@ -20,7 +20,7 @@
   </div>
 
 
-  <div class="end">
+  <div class="end" data-aos="fade" data-aos-delay="200">
     <button class="toggle" (click)="toggleNav = toggleNav? false:true "><i class="fa-solid fa-bars"></i></button>
     <a href="https://api.whatsapp.com/send/?phone=201128330707" class="talk"><span>Let's talk</span><i class="fa-brands fa-whatsapp"></i></a>
   </div>
