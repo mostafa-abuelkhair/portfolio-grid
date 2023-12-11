@@ -35,8 +35,10 @@ nav{
     display: flex;
     align-self: flex-start;
     gap: 10px;
-    button.talk{
+    .talk{
       background-color: var(--foundation2);
+      font-size: 14px;
+      text-decoration: none;
       cursor: pointer;
       border: none;
       color:var(--foundation4);
@@ -49,7 +51,7 @@ nav{
        display: none;
       }
     }
-    button.toggle{
+    .toggle{
       cursor: pointer;
       display: none;
       font-size: 25px;
@@ -71,12 +73,13 @@ nav{
     justify-content: space-between;
 
     .end{
-      button.toggle{
+      .toggle{
         display: block;
       }
-      button.talk{
+      .talk{
+
         background: transparent;
-        padding: 0px 0px;
+        padding: 10px 0px;
         border: none;
         &:hover{
           background-color: transparent;

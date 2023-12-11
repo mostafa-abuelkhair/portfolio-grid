@@ -78,6 +78,7 @@ $foundation2:#202020;
     grid-area: social;
     display: flex;
     justify-content: space-around;
+    a{color: var(--foundation4);}
     i{
       font-size: 35px;
       cursor: pointer;

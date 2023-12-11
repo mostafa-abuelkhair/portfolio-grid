@@ -1,0 +1,55 @@
+<app-nav></app-nav>
+
+
+<section class="contact">
+
+  <article class="info">
+
+    <h2>CONTACT INFO</h2>
+    <div class="part">
+      <i class="fa-solid fa-envelope"></i>
+      <div>
+        <h3>MAIL</h3>
+        <p>m.sayed1217&#64;gmail.com</p>
+      </div>
+    </div>
+
+    <div class="part">
+      <i class="fa-solid fa-phone"></i>
+      <div>
+        <h3>CONTACT</h3>
+        <p>+201128330707</p>
+      </div>
+    </div>
+
+    <div class="part">
+      <i class="fa-solid fa-location-dot"></i>
+      <div>
+        <h3>LOCATION</h3>
+        <p>InShams, Cairo, Egypt.</p>
+      </div>
+    </div>
+
+    <h2>SOCIAL INFO</h2>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/mohamed-sayed-sayed-abdelkhalek-68b538137/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/bnice1217" target="_blank"><i class="fa-brands fa-facebook-f" ></i></a>
+      <a href="https://www.instagram.com/mohameda4shraf/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+
+
+  </article>
+
+  <form class="message" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <h2>Let's work <span>together</span>.</h2>
+    <input type="text" id="name" name="name"  placeholder="Name*" ngModel required maxlength="255"  #name="ngModel">
+    <input type="email" id="email" name="email"  placeholder="Email*" ngModel required maxlength="255"  #email="ngModel">
+    <input type="text" id="subject" name="subject"  placeholder="Your Subject*" ngModel required maxlength="255"  #subject="ngModel">
+    <textarea  id="message" name="message"  placeholder="Your Message*" rows="10" cols="30" ngModel required maxlength="255"  #message="ngModel"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+</section>
+
+
+<app-footer></app-footer>

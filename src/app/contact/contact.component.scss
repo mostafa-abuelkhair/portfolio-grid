@@ -1,0 +1,124 @@
+$foundation1:#151515;
+$foundation2:#202020;
+$foundation5:#272727fe;
+
+.contact{
+
+  padding: 80px 18%;
+
+  display: flex;
+  gap: 40px;
+
+  .info{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    h2{font-size: 20px;margin-bottom: 0px;}
+    h3{
+      font-size: 16px;
+      color: var(--foundation5);
+    }
+
+    .part{
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      i{
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        align-items: center;
+        font-size: 25px;
+        width: 80px;
+        height: 60px;
+        background: linear-gradient(45deg, $foundation2 0%, $foundation1 100%);
+        border-radius: 20px;
+      }
+      div{
+        width: 100%;
+        margin-left: 20px;
+        p{
+          word-break: break-all;
+        }
+      }
+    }
+
+    .social{
+      display: flex;
+      justify-content: space-between;
+      a{
+        color: var(--foundation4);
+        text-decoration: none;
+      }
+      i{
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65px;
+        height: 65px;
+        background: linear-gradient(45deg, $foundation2 0%, $foundation1 100%);
+        border-radius: 50%;
+        &:hover{
+          background: var(--foundation3);
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+
+  form{
+    width: 60%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, $foundation2 0%, $foundation1 100%);
+    border-radius: 30px;
+    outline: solid 0.5px rgba(255, 255, 255, 0.137);
+
+    h2{
+      font-weight: 500;
+      span{color: var(--foundation3);}
+      font-size: 30px;
+    }
+
+    input,textarea{
+      padding: 15px;
+      background-color: $foundation5;
+      color: var(--foundation4);
+      &::placeholder {color: var(--foundation5);}
+      border: none;
+      border-radius: 10px;
+    }
+
+    button{
+      background-color: var(--foundation2);
+      padding: 10px;
+      color: var(--foundation4);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      &:hover{background-color: var(--foundation3);}
+    }
+
+  }
+}
+
+@media only screen and (max-width: 992px) {
+
+  .contact{
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 5%;
+
+    .info,form{
+      width: 100%;
+    }
+
+  }
+}

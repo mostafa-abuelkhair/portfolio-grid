@@ -10,9 +10,9 @@
       <li>
         <a routerLink="/about" [routerLinkActive]="['active']" (click)="toggleNav=false">About</a>
       </li>
-      <li>
+      <!-- <li>
         <a routerLink="/work" [routerLinkActive]="['active']" (click)="toggleNav=false">Work</a>
-      </li>
+      </li> -->
       <li>
         <a routerLink="/contact" [routerLinkActive]="['active']" (click)="toggleNav=false">Contact</a>
       </li>
@@ -22,7 +22,7 @@
 
   <div class="end">
     <button class="toggle" (click)="toggleNav = toggleNav? false:true "><i class="fa-solid fa-bars"></i></button>
-    <button class="talk"><span>Let's talk</span><i class="fa-brands fa-whatsapp"></i></button>
+    <a href="https://api.whatsapp.com/send/?phone=201128330707" class="talk"><span>Let's talk</span><i class="fa-brands fa-whatsapp"></i></a>
   </div>
 
 </nav>
