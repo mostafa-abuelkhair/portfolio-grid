@@ -1,0 +1,136 @@
+$foundation1:#151515;
+$foundation2:#202020;
+
+.about{
+
+  display: flex;
+  padding: 80px 18%;
+  gap: 8%;
+
+  h2{font-size: 20px;}
+  h4,h5,p,pre{color: var(--foundation5);}
+  h3{color: var(--foundation3);}
+  p{line-height: 20px;}
+
+  aside{
+    width: 30%;
+    padding: 15px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, $foundation2 0%, $foundation1 100%);
+    outline: solid 0.5px rgba(255, 255, 255, 0.137);
+    height: fit-content;
+    img{
+      display: block;
+      margin: auto;
+      width: 100%;
+      border-radius: 25px;
+    }
+    h2{
+      text-align: center;
+    }
+    p{
+      text-align: center;
+      color: var(--foundation5);
+    }
+    .social{
+      font-size: 30px;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      i:hover{
+        color: var(--foundation3);
+        cursor: pointer;
+      }
+    }
+    button{
+      width: 100%;
+      background-color: var(--foundation2);
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      color:var(--foundation4);
+      padding: 15px 30px;
+      border-radius: 20px;
+      &:hover{
+        background-color: var(--foundation3);
+      }
+    }
+
+
+  }
+
+  .details{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+    .about-me{
+      p{color: var(--foundation5);}
+    }
+
+    .experience{
+      display: flex;
+      flex-direction: column;
+      gap:10px;
+      h2{
+        margin: 0px;
+      }
+      h5{
+        margin-bottom: 0px;
+      }
+      p,pre{
+        margin-top: 5px;
+      }
+      pre{
+        font-size: 16px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+      }
+    }
+
+    .cources{
+      div{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        h4{
+          display: block;
+          width: 30%;
+          box-sizing: border-box;
+          margin: 0px;
+        }
+        h3{
+          width: 70%;
+        };
+
+      }
+    }
+
+
+  }
+
+}
+
+
+
+@media only screen and (max-width: 992px) {
+  .about{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 5%;
+
+    gap:80px;
+
+    aside{
+      width: 100%;
+
+      img{
+        max-width: 300px;
+      }
+    }
+    .details{
+      width: 100%;
+    }
+  }
+}
