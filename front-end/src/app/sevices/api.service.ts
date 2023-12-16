@@ -8,7 +8,7 @@ export class ApiService {
 
   constructor( private http:HttpClient ) { }
 
-  url="http://localhost/grid"
+  url=""
 
   info(){
       return this.http.get(this.url+'/info')
@@ -28,6 +28,10 @@ export class ApiService {
 
   languages(){
       return this.http.get(this.url+'/languages')
+    }
+
+    sendMessage(body:any){
+      return this.http.post(this.url+'/message',body)
     }
 
 }

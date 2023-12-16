@@ -52,7 +52,10 @@ export class ContactComponent {
   }
 
   onSubmit(f:NgForm){
-
+    this.api.sendMessage(f.value).subscribe( (response:any) => {
+      alert(response.message)
+      f.reset()
+    });
   }
 
 }
