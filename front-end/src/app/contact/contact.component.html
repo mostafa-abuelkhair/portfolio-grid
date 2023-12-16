@@ -10,7 +10,7 @@
       <i class="fa-solid fa-envelope"></i>
       <div>
         <h3>MAIL</h3>
-        <p>m.sayed1217&#64;gmail.com</p>
+        <p>{{info.mail}}</p>
       </div>
     </div>
 
@@ -18,7 +18,7 @@
       <i class="fa-solid fa-phone"></i>
       <div>
         <h3>CONTACT</h3>
-        <p>+201128330707</p>
+        <p>{{info.phone}}</p>
       </div>
     </div>
 
@@ -26,15 +26,15 @@
       <i class="fa-solid fa-location-dot"></i>
       <div>
         <h3>LOCATION</h3>
-        <p>InShams, Cairo, Egypt.</p>
+        <p>{{info.location}}</p>
       </div>
     </div>
 
     <h2 data-aos="fade" data-aos-delay="400">SOCIAL INFO</h2>
     <div class="social" data-aos="fade" data-aos-delay="500">
-      <a href="https://www.linkedin.com/in/mohamed-sayed-sayed-abdelkhalek-68b538137/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="https://www.facebook.com/bnice1217" target="_blank"><i class="fa-brands fa-facebook-f" ></i></a>
-      <a href="https://www.instagram.com/mohameda4shraf/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a [href]="info.linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a [href]="info.facebook" target="_blank"><i class="fa-brands fa-facebook-f" ></i></a>
+      <a [href]="info.insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     </div>
 
   </article>

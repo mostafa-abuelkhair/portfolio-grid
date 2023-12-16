@@ -3,46 +3,38 @@
 <section class="grid">
 
   <article class="title" data-aos="fade-right">
-    <img src="assets/imgs/profile3.jpg" alt="">
+    <img [src]="info.img" alt="">
     <div>
-      <h1>A Telecommunication Engineer</h1>
-      <h2>Mohamed Sayed</h2>
-      <h3>I like to troubleshoot and get resolutions to technical challenges</h3>
+      <h1>{{info['job_title']}}</h1>
+      <h2>{{info.name}}</h2>
+      <h3>{{info.bio}}</h3>
     </div>
     <i routerLink="/about" class="fa-regular fa-circle-right"></i>
   </article>
 
   <article class="aim" data-aos="fade-left" data-aos-delay="100">
     <h2>
-      Aiming To Develop My Skills and Get a Challenging Positions.
+      {{info.aim}}
     </h2>
   </article>
 
   <article class="social" data-aos="fade-left" data-aos-delay="100">
-    <a href="https://www.linkedin.com/in/mohamed-sayed-sayed-abdelkhalek-68b538137/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-    <a href="https://www.facebook.com/bnice1217" target="_blank"><i class="fa-brands fa-facebook-f" ></i></a>
-    <a href="https://www.instagram.com/mohameda4shraf/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a [href]="info.linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a [href]="info.facebook" target="_blank"><i class="fa-brands fa-facebook-f" ></i></a>
+    <a [href]="info.insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
   </article>
 
   <article class="skills" data-aos="fade-up-right" data-aos-delay="400">
     <h2>Specialization</h2>
     <p>
-      MW TX Huawei, RAN Integrator Huawei, UPS Schneider, HCNA(R&S), HCIA-5G, GSM, UMTS, LTE and FTTX .
+      {{info.specialization}}
     </p>
   </article>
 
   <article class="education" data-aos="fade-up-right" data-aos-delay="300">
     <h2>Education</h2>
     <p>
-      B.Sc. in Engineering of Communication and Electronics with Grade <strong>Very Good with Honor</strong>
-
-    </p>
-  </article>
-
-  <article class="work">
-    <h2>Work</h2>
-    <p>
-      MW TX Project Delivery Technical Engineer at <strong>Huawei</strong>
+      {{info['education_sum']}}
     </p>
   </article>
 
@@ -55,12 +47,12 @@
   </article>
 
   <article class="experience"  data-aos="fade-up" data-aos-delay="500">
-    <h2>05</h2>
+    <h2>{{info['experience_years']}}</h2>
     <p>Years Experience</p>
   </article>
 
   <article class="cources" data-aos="fade-up" data-aos-delay="600">
-    <h2>+10</h2>
+    <h2>{{info['cert_numbers']}}</h2>
     <p>Trainings and certificates</p>
   </article>
 

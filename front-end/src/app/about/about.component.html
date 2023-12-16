@@ -4,12 +4,12 @@
 
   <aside class="profile" data-aos="fade-right">
     <img src="assets/imgs/profile4.jpg" alt="">
-    <h2>Mohamed Sayed</h2>
-    <p>Abdelkhalek</p>
+    <h2>{{info.name}}</h2>
+    <p>{{info['last_name']}}</p>
     <div class="social">
-      <a href="https://www.linkedin.com/in/mohamed-sayed-sayed-abdelkhalek-68b538137/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="https://www.facebook.com/bnice1217" target="_blank"><i class="fa-brands fa-facebook-f" ></i></a>
-      <a href="https://www.instagram.com/mohameda4shraf/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a [href]="info.linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a [href]="info.facebook" target="_blank"><i class="fa-brands fa-facebook-f" ></i></a>
+      <a [href]="info.insta" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     </div>
     <button routerLink="/contact">Contact Me</button>
   </aside>
@@ -18,84 +18,29 @@
 
     <article class="about-me">
       <h2 data-aos="fade">ABOUT ME</h2>
-      <p data-aos="fade" data-aos-delay="200">I graduated with degree very good with honor 80.59 % from Communication and Electronics Engineering, Highly innovative and passionate about telecommunication industry. <br> <br>I like to troubleshoot and get resolutions to technical challenges, I’m seeking a challenging career as a telecom Engineer that provides an opportunity to put by abilities and learning skills to best use and make my effective contribution to an organization for bright and rewarding career.</p>
+      <p data-aos="fade" data-aos-delay="200">{{info['about']}}</p>
     </article>
 
     <section class="experience">
       <h2 data-aos="fade" data-aos-delay="200">EXPERIENCE</h2>
-      <article data-aos="fade" data-aos-delay="400">
-        <h4>- March 2022 - Present</h4>
-        <h3>Huawei Joined</h3>
-        <h5>Nov 2022- Present (Microwave TX TE)</h5>
-        <p>
-          Supporting Level A Operator in Democratic Republic of Congo [Kinshasa] as following: <br>
-          Delivered More than 302 New Sites using latest Huawei ODU Products.<br>
-          Delivered LH Project 10+0 using newest RFU-non SD 5D.<br>
-          Managed to Cutover and Swap till moment 70 MW Link to resolve the Congestion.<br>
-          Skilled and Familiar with Iriver1, Iriver2, WDT, ISDP, MBB and NCE.<br>
-          Transferring the Knowledge for the Local guys and leading them to leverage their skills.<br>
-          Troubleshooting and following up with SBCs on ground to install according to the HEDx libraries
-          and R&D Guidance.
-          </p>
+      <article data-aos="fade" data-aos-delay="400" *ngFor="let exp of experience">
+        <h4>{{exp.date}}</h4>
+        <h3>{{exp.job}}</h3>
 
-          <h5>26th July till Novemebr 2022 (Wireless TE)</h5>
-          <p>
-            Onsite Project (Telecom Egypt): <br> Worked with the integration team on integrating new
-            sites, Adding L2600 Band for existing sites Swapping BBU3900 with BBU5900 and replacing RRUs
-            And Antennas with AAUs to provide 64T64R, Installing License and Troubleshooting the Alarms
-            And supporting the SBCs Team onsite to install efficiently, Checking VSWR, Doing RET. etc.
-            Programmed one RET Tool with Python.
-          </p>
+        <ng-container *ngFor="let des of exp.des">
+          <h5>{{des.title}}</h5>
+          <p>{{des.description}}</p>
+        </ng-container>
 
-          <h5>From 13th April till 25th July </h5>
-          <p>
-            Microwave principles such as frequency bands, fading types, OptiX RTN Hardware Products,
-            Relay Station types, AM, AMAC, AM Booster and RSL. RTN main features such as LAG, ELAG,
-            PLA, EPLA, EPLA+, Super EPLA, XPIC, SDB, CA, and MIMO.
-            Protection types such as HSB, FD and SD. Microwave Link Design using iRiver2.
-          </p>
-
-          <h5>From 27th march till 12th April</h5>
-          <p>
-            (GSM Network Architecture, UMTS Network Architecture, LTE Network Architecture,
-            OFDM Principles, Multiple Access and Duplex Technologies, LTE Frame Structure,
-             LTE Physical Channels, eNodeB Product Overview, BBU introduction, RFU, RRU and RET, AAU.
-            Auxiliary Devices, eNodeB LTE Typical Configuration, BTS3900, BTS5900, DBS, APM30,
-            Site Solution, VSWR, RTWP, HDEX for Documentations, LMT by MML for configuration)
-          </p>
-
-          <h5>From 6th march till 24th March</h5>
-          <p>
-            (Network Basics, TCPIP Model, IP Subnetting, Network Device, Management,
-            L2 Switching Principles, Route Reachability between VLANs, LACP, RIP and OSPF,HDEX, eNSP)
-          </p>
       </article>
-
-      <article>
-        <h4>- Jan2022-Novemebr 2022</h4>
-        <h3>Maintenance Engineer at Infinity Distributor</h3>
-        <p>
-          Worked in the field OF UPS for Schneider and APC Products as Technical Service Provider
-          And Maintenance Engineer for Easy UPS from 750VA UPS,3KVA,6KVA,10KVA,15KVA
-          Skilled with Various types of Batteries and load Calculation, Performing Onsite Surveys
-          And Customer Support (on-site & Remote).
-          Managed to Deploy Three Phase 3M 120KVA for well Known Hospital to cover
-          The Surgery Operation Room in addition to the Intensive Care Room.
-          Managed to Deploy the most First use in Middle East and Africa Parallel Kit Solution for
-          Two 6KVA Easy UPSs for Alsharkia for Sugar Manufacturing in Ismailia.
-
-        </p>
-      </article>
-
     </section>
 
-    <article class="education">
+    <article class="education" *ngFor="let edu of education">
         <h2 data-aos="fade">EDUCATION</h2>
-        <h4 data-aos="fade" data-aos-delay="200">- 2015-2020</h4>
-        <h3 data-aos="fade" data-aos-delay="200">B.Sc. in Engineering of Communication and Electronics</h3>
+        <h4 data-aos="fade" data-aos-delay="200">{{edu.date}}</h4>
+        <h3 data-aos="fade" data-aos-delay="200">{{edu.title}}</h3>
         <p data-aos="fade" data-aos-delay="200">
-          From Al-Shorouk Academy
-          with Grade Very Good with Honor.
+          {{edu.description}}
         </p>
     </article>
 
@@ -103,88 +48,23 @@
 
       <h2 >COURCES & SKILLS</h2>
 
-      <div>
-        <h4>-	Dec-2021</h4>
-        <h3>Huawei Certified HCIA-5G</h3>
-      </div>
+      <ng-container *ngFor="let cource of cources">
+        <div>
+          <h4>{{cource.date}}</h4>
+          <h3>{{cource.name}}</h3>
+        </div>
+      </ng-container>
 
-      <div>
-        <h4>-	Sep-2021</h4>
-        <h3>FTTX Overview </h3>
-      </div>
-
-      <div>
-        <h4>-	2020</h4>
-        <h3>Huawei Certified HCNA Routing & Switching</h3>
-      </div>
-
-      <div>
-        <h4>-	2020</h4>
-        <h3>Altium Designer Software for PCBs (self-learning)</h3>
-      </div>
-
-      <div>
-        <h4>-	2020</h4>
-        <h3>Simulink Software for verification</h3>
-      </div>
-
-      <div>
-        <h4>-	Jul 2019</h4>
-        <h3>CST software for RF Designing and simulation</h3>
-      </div>
-
-      <div>
-        <h4>-	June-2019</h4>
-        <h3>IOT with esp node board</h3>
-      </div>
-
-      <div>
-        <h4>-	feb-mar 2019</h4>
-        <h3>CCNA (self-learning)</h3>
-      </div>
-
-      <div>
-        <h4>-	sep2018-march2019	</h4>
-        <h3>Java programming language</h3>
-      </div>
-
-      <div>
-        <h4>-	sep-2018</h4>
-        <h3>Microwave Transmission Course </h3>
-      </div>
-
-      <div>
-        <h4>-	June-Aug2018</h4>
-        <h3>Mobile Networks(2G,3G,4G)</h3>
-      </div>
-
-      <div>
-        <h4>-	June-2017</h4>
-        <h3>Basics of Embedded Systems</h3>
-      </div>
-
-      <div>
-        <h4>-	Jul-sep 2015</h4>
-        <h3>C ++ programming language </h3>
-      </div>
-
-      <div>
-        <h4>-	2016</h4>
-        <h3>Arduino</h3>
-      </div>
 
     </article>
 
     <article class="languages" data-aos="fade">
       <h2>LANGUAGES</h2>
-      <h3>English</h3>
-      <p>Very Good command of English</p>
 
-      <h3>Arabic</h3>
-      <p>Mother Tongue</p>
-
-      <h3>Italian</h3>
-      <p>Basic Knowledge</p>
+      <ng-container *ngFor="let language of languages">
+        <h3>{{language.name}}</h3>
+        <p>{{language.description}}</p>
+      </ng-container>
 
   </article>
 
