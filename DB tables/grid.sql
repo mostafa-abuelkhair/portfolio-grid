@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2023 at 02:42 AM
+-- Generation Time: Dec 17, 2023 at 03:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -111,8 +111,8 @@ CREATE TABLE `experience_description` (
 --
 
 INSERT INTO `experience_description` (`id`, `job_id`, `title`, `description`) VALUES
-(1, 1, 'Nov 2022- Present (Microwave TX TE)', '          Supporting Level A Operator in Democratic Republic of Congo [Kinshasa] as following: <br>Delivered More than 302 New Sites using latest Huawei ODU Products.<br>Delivered LH Project 10+0 using newest RFU-non SD 5D.<br>Managed to Cutover and Swap till moment 70 MW Link to resolve the Congestion.<br>Skilled and Familiar with Iriver1, Iriver2, WDT, ISDP, MBB and NCE.<br>Transferring the Knowledge for the Local guys and leading them to leverage their skills.<br>Troubleshooting and following up with SBCs on ground to install according to the HEDx libraries and R&D Guidance.'),
-(2, 1, '26th July till Novemebr 2022 (Wireless TE)', 'Onsite Project (Telecom Egypt):<br>Worked with the integration team on integrating new sites, Adding L2600 Band for existing sites Swapping BBU3900 with BBU5900 and replacing RRUs And Antennas with AAUs to provide 64T64R, Installing License and Troubleshooting the Alarms And supporting the SBCs Team onsite to install efficiently, Checking VSWR, Doing RET. etc. Programmed one RET Tool with Python.'),
+(1, 1, 'Nov 2022- Present (Microwave TX TE)', 'Supporting Level A Operator in Democratic Republic of Congo [Kinshasa] as following: Delivered\n More than 302 New Sites using latest Huawei ODU Products. Delivered LH Project 10+0 using newest RFU-non SD 5D. Managed to Cutover and Swap till moment 70 MW Link to resolve the Congestion. Skilled and Familiar with Iriver1, Iriver2, WDT, ISDP, MBB and NCE. Transferring the Knowledge for the Local guys and leading them to leverage their skills. Troubleshooting and following up with SBCs on ground to install according to the HEDx libraries and R&D Guidance.'),
+(2, 1, '26th July till Novemebr 2022 (Wireless TE)', 'Onsite Project (Telecom Egypt):Worked with the integration team on integrating new sites, Adding L2600 Band for existing sites Swapping BBU3900 with BBU5900 and replacing RRUs And Antennas with AAUs to provide 64T64R, Installing License and Troubleshooting the Alarms And supporting the SBCs Team onsite to install efficiently, Checking VSWR, Doing RET. etc. Programmed one RET Tool with Python.'),
 (3, 1, 'From 13th April till 25th July', 'Microwave principles such as frequency bands, fading types, OptiX RTN Hardware Products, Relay Station types, AM, AMAC, AM Booster and RSL. RTN main features such as LAG, ELAG, PLA, EPLA, EPLA+, Super EPLA, XPIC, SDB, CA, and MIMO. Protection types such as HSB, FD and SD. Microwave Link Design using iRiver2.'),
 (4, 1, 'From 27th march till 12th April', '(GSM Network Architecture, UMTS Network Architecture, LTE Network Architecture, OFDM Principles, Multiple Access and Duplex Technologies, LTE Frame Structure, LTE Physical Channels, eNodeB Product Overview, BBU introduction, RFU, RRU and RET, AAU. Auxiliary Devices, eNodeB LTE Typical Configuration, BTS3900, BTS5900, DBS, APM30, Site Solution, VSWR, RTWP, HDEX for Documentations, LMT by MML for configuration)'),
 (5, 1, 'From 6th march till 24th March', '(Network Basics, TCPIP Model, IP Subnetting, Network Device, Management, L2 Switching Principles, Route Reachability between VLANs, LACP, RIP and OSPF,HDEX, eNSP)'),
