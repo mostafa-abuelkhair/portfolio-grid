@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 17, 2023 at 03:07 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: sql105.infinityfree.com
+-- Generation Time: Dec 21, 2023 at 01:42 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,26 +19,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `grid`
+-- Database: `if0_34839850_grid`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cource`
+-- Table structure for table `course`
 --
 
-CREATE TABLE `cource` (
+CREATE TABLE `course` (
   `id` int(11) NOT NULL,
   `date` varchar(1024) NOT NULL,
   `name` varchar(1024) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `cource`
+-- Dumping data for table `course`
 --
 
-INSERT INTO `cource` (`id`, `date`, `name`) VALUES
+INSERT INTO `course` (`id`, `date`, `name`) VALUES
 (1, 'Dec-2021', 'Huawei Certified HCIA-5G'),
 (2, 'Sep-2021', 'FTTX Overview'),
 (3, '2020', 'Huawei Certified HCNA Routing & Switching'),
@@ -64,7 +65,7 @@ CREATE TABLE `education` (
   `date` varchar(1024) NOT NULL,
   `title` varchar(1024) NOT NULL,
   `description` varchar(1024) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `education`
@@ -83,7 +84,7 @@ CREATE TABLE `experience` (
   `id` int(11) NOT NULL,
   `date` varchar(1024) NOT NULL,
   `job` varchar(1024) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `experience`
@@ -104,15 +105,15 @@ CREATE TABLE `experience_description` (
   `job_id` int(11) NOT NULL,
   `title` varchar(1024) DEFAULT NULL,
   `description` varchar(1024) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `experience_description`
 --
 
 INSERT INTO `experience_description` (`id`, `job_id`, `title`, `description`) VALUES
-(1, 1, 'Nov 2022- Present (Microwave TX TE)', 'Supporting Level A Operator in Democratic Republic of Congo [Kinshasa] as following: Delivered\n More than 302 New Sites using latest Huawei ODU Products. Delivered LH Project 10+0 using newest RFU-non SD 5D. Managed to Cutover and Swap till moment 70 MW Link to resolve the Congestion. Skilled and Familiar with Iriver1, Iriver2, WDT, ISDP, MBB and NCE. Transferring the Knowledge for the Local guys and leading them to leverage their skills. Troubleshooting and following up with SBCs on ground to install according to the HEDx libraries and R&D Guidance.'),
-(2, 1, '26th July till Novemebr 2022 (Wireless TE)', 'Onsite Project (Telecom Egypt):Worked with the integration team on integrating new sites, Adding L2600 Band for existing sites Swapping BBU3900 with BBU5900 and replacing RRUs And Antennas with AAUs to provide 64T64R, Installing License and Troubleshooting the Alarms And supporting the SBCs Team onsite to install efficiently, Checking VSWR, Doing RET. etc. Programmed one RET Tool with Python.'),
+(1, 1, 'Nov 2022- Present (Microwave TX TE)', 'Supporting Level A Operator in Democratic Republic of Congo [Kinshasa] as following:\r\nDelivered More than 302 New Sites using latest Huawei ODU Products.\r\nDelivered LH Project 10+0 using newest RFU-non SD 5D.\r\nManaged to Cutover and Swap till moment 70 MW Link to resolve the Congestion.\r\nSkilled and Familiar with Iriver1, Iriver2, WDT, ISDP, MBB and NCE. Transferring the Knowledge for the Local guys and leading them to leverage their skills.\r\nTroubleshooting and following up with SBCs on ground to install according to the HEDx libraries and R&D Guidance.'),
+(2, 1, '26th July till Novemebr 2022 (Wireless TE)', 'Onsite Project (Telecom Egypt):\r\nWorked with the integration team on integrating new sites, Adding L2600 Band for existing sites Swapping BBU3900 with BBU5900 and replacing RRUs And Antennas with AAUs to provide 64T64R, Installing License and Troubleshooting the Alarms And supporting the SBCs Team onsite to install efficiently, Checking VSWR, Doing RET. etc. Programmed one RET Tool with Python.'),
 (3, 1, 'From 13th April till 25th July', 'Microwave principles such as frequency bands, fading types, OptiX RTN Hardware Products, Relay Station types, AM, AMAC, AM Booster and RSL. RTN main features such as LAG, ELAG, PLA, EPLA, EPLA+, Super EPLA, XPIC, SDB, CA, and MIMO. Protection types such as HSB, FD and SD. Microwave Link Design using iRiver2.'),
 (4, 1, 'From 27th march till 12th April', '(GSM Network Architecture, UMTS Network Architecture, LTE Network Architecture, OFDM Principles, Multiple Access and Duplex Technologies, LTE Frame Structure, LTE Physical Channels, eNodeB Product Overview, BBU introduction, RFU, RRU and RET, AAU. Auxiliary Devices, eNodeB LTE Typical Configuration, BTS3900, BTS5900, DBS, APM30, Site Solution, VSWR, RTWP, HDEX for Documentations, LMT by MML for configuration)'),
 (5, 1, 'From 6th march till 24th March', '(Network Basics, TCPIP Model, IP Subnetting, Network Device, Management, L2 Switching Principles, Route Reachability between VLANs, LACP, RIP and OSPF,HDEX, eNSP)'),
@@ -128,7 +129,7 @@ CREATE TABLE `info` (
   `id` int(11) NOT NULL,
   `name` varchar(1024) NOT NULL,
   `value` varchar(1024) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `info`
@@ -145,7 +146,7 @@ INSERT INTO `info` (`id`, `name`, `value`) VALUES
 (8, 'experience_years', '05'),
 (9, 'cert_numbers', '+10'),
 (10, 'last_name', 'Abdelkhalek'),
-(11, 'about', 'I graduated with degree very good with honor 80.59 % from Communication and Electronics Engineering, Highly innovative and passionate about telecommunication industry. I like to troubleshoot and get resolutions to technical challenges, I’m seeking a challenging career as a telecom Engineer that provides an opportunity to put by abilities and learning skills to best use and make my effective contribution to an organization for bright and rewarding career.'),
+(11, 'about', 'I graduated with degree very good with honor 80.59 % from Communication and Electronics Engineering, Highly innovative and passionate about telecommunication industry.\r\n\r\nI like to troubleshoot and get resolutions to technical challenges, I’m seeking a challenging career as a telecom Engineer that provides an opportunity to put by abilities and learning skills to best use and make my effective contribution to an organization for bright and rewarding career.'),
 (12, 'mail', 'm.sayed1217@gmail.com'),
 (13, 'phone', '+201128330707'),
 (14, 'location', 'InShams, Cairo, Egypt.'),
@@ -165,7 +166,7 @@ CREATE TABLE `language` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(1024) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `language`
@@ -181,9 +182,9 @@ INSERT INTO `language` (`id`, `name`, `description`) VALUES
 --
 
 --
--- Indexes for table `cource`
+-- Indexes for table `course`
 --
-ALTER TABLE `cource`
+ALTER TABLE `course`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -222,9 +223,9 @@ ALTER TABLE `language`
 --
 
 --
--- AUTO_INCREMENT for table `cource`
+-- AUTO_INCREMENT for table `course`
 --
-ALTER TABLE `cource`
+ALTER TABLE `course`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
