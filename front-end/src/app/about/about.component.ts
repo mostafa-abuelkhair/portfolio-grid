@@ -4,6 +4,7 @@ import { FooterComponent } from '../footer/footer.component';
 import {RouterModule} from '@angular/router';
 import { ApiService } from '../sevices/api.service';
 import { CommonModule } from '@angular/common';
+import { CourseModel, EducationModel, ExpDesModel, ExperienceModel, InfoModel, LanguageModel } from '../models/models';
 
 @Component({
   selector: 'app-about',
@@ -16,60 +17,41 @@ export class AboutComponent {
   constructor(private api:ApiService){}
 
   toggleNav = false;
-  info:any={
-    'website_title':'',
-    'job_title':'',
-    'name':'',
-    'bio':'',
-    'aim':'',
-    'education_sum':'',
-    'specialization':'',
-    'experience_years':'',
-    'cert_numbers':'',
-    'last_name':'',
-    'about':'',
-    'mail':'',
-    'phone':'',
-    'location':'',
-    'linkedin':'',
-    'facebook':'',
-    'insta':'',
-    'whatsapp_link':'',
-    'img':''
-  };
+  info = new InfoModel();
 
-  experience:any=[];
-  education:{id:'',date:'',title:'',description:''}[]=[];
-  cources:{id:'',date:'',name:''}[]=[];
-  languages:{id:'',name:'',description:''}[]=[];
+  experience:ExperienceModel[]=[];
+  education:EducationModel[]=[];
+  courses:CourseModel[]=[];
+  languages:LanguageModel[]=[];
 
-  experience_ids:Set<number> = new Set([]);
 
   ngOnInit() {
 
-    this.api.info().subscribe((res:any)=>{
+      if(this.api.infoCache) this.info = this.api.infoCache;
+      else this.api.info().subscribe((res:InfoModel)=>{
+        this.info = res
+        });
 
-      res.forEach((e:any) => {
-        this.info[e.name]=e.value;
-      });
 
-    });
+      if(this.api.experienceCache) this.experience = this.api.experienceCache;
+      else this.api.experience().subscribe((res:ExperienceModel[])=>{
+         this.experience = res
+        });
 
-    this.api.experience().subscribe((res:any)=>{
-      this.experience=res;
-    });
+      if(this.api.educationCache) this.education = this.api.educationCache;
+      else this.api.education().subscribe((res:EducationModel[])=>{
+         this.education = res
+        });
 
-    this.api.education().subscribe((res:any)=>{
-      this.education=res;
-    });
+      if(this.api.coursesCache) this.courses = this.api.coursesCache;
+      else this.api.courses().subscribe((res:CourseModel[])=>{
+         this.courses = res
+        });
 
-    this.api.cources().subscribe((res:any)=>{
-      this.cources=res;
-    });
-
-    this.api.languages().subscribe((res:any)=>{
-      this.languages=res;
-    });
+      if(this.api.languagesCache) this.languages = this.api.languagesCache;
+      else this.api.languages().subscribe((res:LanguageModel[])=>{
+         this.languages = res
+        });
 
   }
 }

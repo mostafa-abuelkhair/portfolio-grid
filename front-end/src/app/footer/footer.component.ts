@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {RouterModule} from '@angular/router';
 import { ApiService } from '../sevices/api.service';
+import { InfoModel } from '../models/models';
 
 @Component({
   selector: 'app-footer',
@@ -13,38 +14,17 @@ export class FooterComponent {
   constructor(private api:ApiService){}
 
   toggleNav = false;
-  info:any={
-    'website_title':'',
-    'job_title':'',
-    'name':'',
-    'bio':'',
-    'aim':'',
-    'education_sum':'',
-    'specialization':'',
-    'experience_years':'',
-    'cert_numbers':'',
-    'last_name':'',
-    'about':'',
-    'mail':'',
-    'phone':'',
-    'location':'',
-    'linkedin':'',
-    'facebook':'',
-    'insta':'',
-    'whatsapp_link':'',
-    'img':''
-  };
+  info = new InfoModel();
 
 
   ngOnInit() {
 
-    this.api.info().subscribe((res:any)=>{
+    if(this.api.infoCache) this.info = this.api.infoCache;
 
-      res.forEach((e:any) => {
-        this.info[e.name]=e.value;
+    else this.api.info().subscribe((res:InfoModel)=>{
+       this.info = res
       });
 
-    });
-
   }
+
 }
